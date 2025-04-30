@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>S-OIL 2023 지속가능성보고서</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; display: flex; height: 100vh; }
+    nav { width: 250px; background-color: #f5f5f5; padding: 20px; overflow-y: auto; }
+    main { flex: 1; padding: 30px; overflow-y: auto; }
+    h2 { border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+    section { display: none; }
+    section.active { display: block; }
+    a { text-decoration: none; color: #2b2b2b; display: block; margin-bottom: 10px; cursor: pointer; }
+    a:hover { color: green; }
+    img { max-width: 100%; margin-top: 15px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2>목차</h2>
+    <a onclick="showSection('intro')">1. 보고서 개요</a>
+    <a onclick="showSection('env')">2. 환경(Environment)</a>
+    <a onclick="showSection('social')">3. 사회(Social)</a>
+    <a onclick="showSection('governance')">4. 지배구조(Governance)</a>
+    <a onclick="showSection('data')">5. ESG 성과지표</a>
+  </nav>
+
+  <main>
+    <section id="intro" class="active">
+      <h2>1. 보고서 개요</h2>
+      <p>S-OIL의 2023 지속가능성보고서는 환경, 사회, 지배구조의 세 영역에서 성과와 과제를 명확히 구분하여 기술하고 있으며...</p>
+      <img src="img/overview.png" alt="보고서 개요 그래프" />
+    </section>
+    <section id="env">
+      <h2>2. 환경(Environment)</h2>
+      <p id="env-text">
+      S-OIL은 기후변화 대응을 최우선 과제로 삼고 있으며, 2023년에는 Scope 1, 2 배출량 감축을 위한 다양한 기술적 노력을 기울였습니다...
+      </p>
+      <img src="img/environment.png" alt="환경 관련 그래프" />
+
+      <button onclick="copyText('env-text', 'env-prompt')">📋 AI 분석 요청하기</button>
+      <p><strong>💡 추천 프롬프트:</strong> <span id="env-prompt">다음 내용을 바탕으로 ESG 평가 강점과 개선점을 3가지씩 도출해줘.</span></p>
+    </section>
+    <section id="social">
+      <h2>3. 사회(Social)</h2>
+      <p>S-OIL은 인권경영 선언에 따라 협력사 및 내부 직원에 대한 정기적인 인권 리스크 평가를 수행하고 있으며...</p>
+      <img src="img/social.png" alt="사회 관련 그래프" />
+    </section>
+    <section id="governance">
+      <h2>4. 지배구조(Governance)</h2>
+      <p>ESG 위원회는 2022년 말 신설되어 2023년부터 정기적으로 이사회의 ESG 경영활동을 보고받고 있으며...</p>
+      <img src="img/governance.png" alt="지배구조 관련 그래프" />
+    </section>
+    <section id="data">
+      <h2>5. ESG 성과지표</h2>
+      <p>S-OIL의 ESG 주요 지표는 전년 대비 대부분 개선세를 보이고 있으며...</p>
+      <img src="img/data.png" alt="ESG 성과 지표 그래프" />
+    </section>
+  </main>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('main section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
